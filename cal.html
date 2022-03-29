@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/cal.js">
+    <title>Máy tính</title>
+</head>
+<body>
+    <button class="number" value="1">1</button>
+    <button class="number" value="2">2</button>
+    <button class="number" value="3">3</button>
+    </br>
+    </br>
+    <button class="number" value="4">4</button>
+    <button class="number" value="5">5</button>
+    <button class="number" value="6">6</button>
+    </br>
+    </br>
+    <button class="number" value="7">7</button>
+    <button class="number" value="8">8</button>
+    <button class="number" value="9">9</button>
+    </br>
+    </br>
+    <button class="number" value="0">0</button>
+    <button class="number" value=".">.</button>
+    <button class="del" value="del">del</button>
+    <button class="delAll" value="ac">AC</button>
+    </br>
+    </br>
+    <button class="operator" value="*">X</button>
+    <button class="operator" value="/">/</button>
+    <button class="operator" value="+">+</button>
+    <button class="operator" value="-">-</button>
+    </br>
+    </br>
+    <button class="calculate" value="=">=</button>
+    <br>
+    <br>
+    <textarea id="result">0</textarea>
+    </br>
+    <textarea id="result2">0</textarea>
+</body>
+<script>
+    let total = [];
+
+    let number = document.querySelectorAll('.number');
+    for(i in number) {
+        number[i].onclick = function(e) {
+            let a = e.target.value;
+            total.push(a)
+            console.log(total);
+            results()
+        }
+    };
+
+    let del = document.querySelector('.del');
+    let ac = document.querySelector('.delAll');
+    let operators = document.querySelectorAll('.operator');
+    let calculates = document.querySelector('.calculate');
+    let result = document.querySelector('#result');
+    let result2 = document.querySelector('#result2');
+
+    for(i in operators) {
+        operators[i].onclick = function(e) {
+            let b = e.target.value;
+            let c = this.value
+            let totalLength = total.length - 1;
+            let valueFinal = total[totalLength];
+
+            if(totalLength == -1) {
+                return };
+            if(["*","/","+","-"].includes(valueFinal)) {
+                total[totalLength] = c
+            } else {
+                total.push(c);
+            }
+
+
+            results();
+        }
+    }
+
+    function results() {
+        result.value = total.join('').replace(/\*/g, 'X')
+    };
+
+    calculates.onclick = function(e) {
+        result2.value = eval(total.join(''))
+    }
+
+    del.onclick = function(e) {
+        total.pop();
+        results();
+        result2.value = "0"
+    };
+
+    ac.onclick = function(e) {
+        total = [];
+        results();
+        result2.value = "0";
+    }</script>
+</html>
