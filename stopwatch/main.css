@@ -1,0 +1,45 @@
+/* Variabes */
+
+
+.wrapper {
+    width: 800px;
+    margin: 30px auto;
+    color:#eeeeee_;
+    text-align:center;
+}
+
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 2.6em;
+    text-transform: uppercase;
+}
+
+#seconds, #tens{
+    font-size:2em;
+}
+.button{
+    color:var(--white);
+    border: solid 1px var(--white);
+    text-decoration:none;
+    cursor:pointer;
+    font-size:1.2em;
+    padding:18px 10px;
+    width:180px;
+    margin: 10px;
+    outline: none;}
+.button-start {
+    background:#00CC00;
+}
+.button-stop {
+    background: #ec3055;
+}
+.button-reset {
+    background: #1876bf;
+}
+.button:hover{
+    background: #bfbdbd;
+     border: solid 1px var(--white);
+     color:var(--base-color);
+ }
+
