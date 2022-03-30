@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkbox hiện và ẩn thông báo</title>
+</head>
+<body>
+
+<p>Viết chương trình bắt sự kiện check và uncheck của Javascript.</p>
+
+<input type="checkbox" class="action" value="1"/> <label>click me</label>
+<script language="javascript">
+    document.querySelector('.action').onclick = function(e){
+        if (this.checked){
+            alert("Bạn vừa click vào ô click me");
+        }
+        else{
+            alert("Bạn vừa bỏ click");
+        }
+    };
+</script>
+</body>
+</html>
